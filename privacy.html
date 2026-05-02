@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy — Garnish</title>
+<meta name="description" content="How Garnish collects, uses, and protects your information."/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://cookgarnish.com/privacy"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-deep:#1a3a06;
+  --green-mid:#2d5a0e;
+  --green-bright:#4a8c1c;
+  --green-light:#e8f2d8;
+  --green-pale:#f4f9ed;
+  --cream:#faf7f0;
+  --warm-white:#fffef9;
+  --text-dark:#0f1f05;
+  --text-mid:#3d5c1a;
+  --text-soft:#6b7c5a;
+  --border:rgba(45,90,14,.12);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--text-dark);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:1000;opacity:.6;
+}
+nav{
+  position:sticky;top:0;z-index:100;
+  padding:18px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(250,247,240,.88);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:22px;color:var(--green-deep);
+  text-decoration:none;font-weight:700;letter-spacing:-.5px;
+}
+.nav-logo span{font-style:italic;font-weight:400}
+.nav-back{
+  font-size:14px;color:var(--text-mid);
+  text-decoration:none;font-weight:500;
+}
+.nav-back:hover{color:var(--green-bright)}
+
+main{max-width:760px;margin:0 auto;padding:60px 28px 80px;position:relative;z-index:2}
+
+.eyebrow{
+  display:inline-block;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--green-bright);font-weight:500;
+  margin-bottom:14px;
+}
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(34px,5vw,52px);
+  line-height:1.1;letter-spacing:-1px;
+  color:var(--green-deep);
+  margin-bottom:14px;
+}
+.subtitle{
+  font-size:17px;color:var(--text-soft);
+  margin-bottom:8px;
+}
+.updated{
+  font-size:14px;color:var(--text-soft);
+  margin-bottom:40px;
+  padding-bottom:24px;
+  border-bottom:1px solid var(--border);
+}
+.updated strong{color:var(--text-mid);font-weight:600}
+
+.toc{
+  background:var(--green-pale);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:22px 26px;
+  margin-bottom:48px;
+}
+.toc-title{
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--green-mid);font-weight:600;
+  margin-bottom:12px;
+}
+.toc ol{
+  list-style:none;
+  counter-reset:toc;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 20px;
+}
+.toc li{counter-increment:toc;font-size:14.5px}
+.toc li::before{
+  content:counter(toc) ". ";
+  color:var(--text-soft);
+}
+.toc a{
+  color:var(--green-mid);
+  text-decoration:none;
+}
+.toc a:hover{text-decoration:underline}
+
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  color:var(--green-deep);
+  margin:48px 0 14px;
+  letter-spacing:-.3px;
+  scroll-margin-top:80px;
+}
+h3{
+  font-size:16px;font-weight:600;
+  color:var(--green-mid);
+  margin:24px 0 8px;
+}
+p{margin-bottom:14px;color:var(--text-dark);font-size:16px}
+ul{margin:8px 0 16px 22px}
+li{margin-bottom:6px;font-size:16px}
+li::marker{color:var(--green-bright)}
+a{color:var(--green-mid);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--green-bright)}
+strong{color:var(--green-deep)}
+
+.callout{
+  background:var(--warm-white);
+  border-left:3px solid var(--green-bright);
+  border-radius:0 10px 10px 0;
+  padding:16px 20px;
+  margin:18px 0;
+  font-size:15px;
+}
+
+table{
+  width:100%;border-collapse:collapse;
+  margin:12px 0 20px;
+  font-size:14.5px;
+  background:var(--warm-white);
+  border-radius:10px;overflow:hidden;
+  border:1px solid var(--border);
+}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--green-pale);color:var(--green-deep);font-weight:600;font-size:13px;letter-spacing:.04em}
+tr:last-child td{border-bottom:0}
+
+footer{
+  border-top:1px solid var(--border);
+  margin-top:80px;padding:40px 28px;
+  text-align:center;
+  background:var(--green-pale);
+  position:relative;z-index:2;
+}
+footer p{font-size:14px;color:var(--text-soft);margin-bottom:6px}
+footer a{color:var(--text-mid);font-weight:500}
+
+@media (max-width:600px){
+  nav{padding:14px 20px}
+  main{padding:40px 22px 60px}
+  .toc ol{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Garnish<span> 🌿</span></a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<main>
+  <span class="eyebrow">Legal</span>
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">We collect the minimum we need to make Garnish work — and we explain everything below in plain language.</p>
+  <p class="updated"><strong>Last updated:</strong> May 2, 2026 &nbsp;·&nbsp; <strong>Effective:</strong> May 2, 2026</p>
+
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#info">Information we collect</a></li>
+      <li><a href="#use">How we use information</a></li>
+      <li><a href="#sharing">Sharing &amp; third parties</a></li>
+      <li><a href="#cookies">Cookies &amp; tracking</a></li>
+      <li><a href="#retention">Data retention</a></li>
+      <li><a href="#rights">Your rights</a></li>
+      <li><a href="#california">California (CCPA/CPRA)</a></li>
+      <li><a href="#eu">EU/UK (GDPR)</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#transfers">International transfers</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </div>
+
+  <h2 id="intro">1. Introduction</h2>
+  <p>Welcome to Garnish ("Garnish," "we," "us," or "our"). This Privacy Policy explains how we collect, use, share, and protect personal information when you use our website at <a href="https://cookgarnish.com">cookgarnish.com</a>, our mobile and web applications, and any related services (collectively, the "Service").</p>
+  <p>By using the Service, you agree to the practices described in this policy. If you don't agree, please don't use the Service.</p>
+
+  <h2 id="info">2. Information we collect</h2>
+
+  <h3>Information you give us</h3>
+  <ul>
+    <li><strong>Account information:</strong> name, email address, and password (stored as a hash) when you create an account or join the waitlist.</li>
+    <li><strong>Profile preferences:</strong> dietary preferences, allergens, favorite recipes, saved meal plans, and shopping lists you create.</li>
+    <li><strong>User-generated content:</strong> photos, ratings, notes, or comments you upload to recipes.</li>
+    <li><strong>Communications:</strong> messages you send us through support channels, surveys, or social media.</li>
+  </ul>
+
+  <h3>Information we collect automatically</h3>
+  <ul>
+    <li><strong>Usage data:</strong> recipes viewed, searches performed, features used, time spent, and interaction patterns.</li>
+    <li><strong>Device &amp; technical data:</strong> device type, operating system, browser, IP address, language, time zone, and crash logs.</li>
+    <li><strong>Cookies &amp; similar technologies:</strong> see <a href="#cookies">Section 5</a>.</li>
+  </ul>
+
+  <h3>Information from third parties</h3>
+  <ul>
+    <li><strong>Sign-in providers:</strong> if you sign in with Google, Apple, or another provider, we receive your name, email, and a unique identifier from that provider.</li>
+    <li><strong>Amazon Fresh:</strong> if you connect your Amazon account to enable one-tap grocery delivery, we receive limited cart and order metadata necessary to facilitate your purchase. We do not receive your Amazon password or full payment details.</li>
+  </ul>
+
+  <h2 id="use">3. How we use information</h2>
+  <p>We use personal information to:</p>
+  <ul>
+    <li>Provide, operate, and maintain the Service (including recipe recommendations, meal planning, and shopping lists).</li>
+    <li>Personalize your experience based on your dietary preferences and saved recipes.</li>
+    <li>Facilitate Amazon Fresh grocery cart creation when you choose to use that feature.</li>
+    <li>Send transactional emails (account confirmations, password resets, order receipts).</li>
+    <li>Send marketing emails about new features and recipes — only if you opt in. You can unsubscribe at any time.</li>
+    <li>Analyze usage to improve the Service, fix bugs, and develop new features.</li>
+    <li>Detect, prevent, and address fraud, security incidents, and abuse.</li>
+    <li>Comply with legal obligations and enforce our Terms.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>We do not sell your personal information.</strong> We do not "share" personal information for cross-context behavioral advertising as those terms are defined under the CPRA.
+  </div>
+
+  <h2 id="sharing">4. Sharing &amp; third parties</h2>
+  <p>We share personal information only in the following limited circumstances:</p>
+
+  <h3>Service providers</h3>
+  <p>We use trusted vendors to operate the Service. They process data only on our instructions and under contractual confidentiality obligations.</p>
+  <table>
+    <thead><tr><th>Provider</th><th>Purpose</th><th>Data categories</th></tr></thead>
+    <tbody>
+      <tr><td>Supabase</td><td>Database, authentication, file storage</td><td>Account, profile, content</td></tr>
+      <tr><td>Kit (ConvertKit)</td><td>Waitlist &amp; email marketing</td><td>Email address, name</td></tr>
+      <tr><td>Vercel</td><td>Web hosting</td><td>IP address, request logs</td></tr>
+      <tr><td>Amazon</td><td>Grocery cart &amp; checkout (when used)</td><td>Cart contents, order ID</td></tr>
+      <tr><td>Analytics provider</td><td>Aggregate usage analytics</td><td>Pseudonymous device &amp; usage data</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Legal &amp; safety</h3>
+  <p>We may disclose information if required by law, subpoena, or valid government request, or if we believe disclosure is necessary to protect our rights, your safety, or the safety of others.</p>
+
+  <h3>Business transfers</h3>
+  <p>If Garnish is involved in a merger, acquisition, or asset sale, your information may be transferred as part of that transaction. We will notify you and provide choices if applicable law requires it.</p>
+
+  <h3>With your consent</h3>
+  <p>We will share information for any other purpose with your consent.</p>
+
+  <h2 id="cookies">5. Cookies &amp; tracking</h2>
+  <p>We use cookies and similar technologies for the following purposes:</p>
+  <ul>
+    <li><strong>Strictly necessary:</strong> sign-in sessions, security, and core functionality. These cannot be disabled.</li>
+    <li><strong>Functional:</strong> remember your preferences (e.g., theme, dietary filters).</li>
+    <li><strong>Analytics:</strong> aggregate usage statistics to improve the Service.</li>
+  </ul>
+  <p>You can control cookies through your browser settings. Where required by law, we will request your consent before setting non-essential cookies.</p>
+
+  <h2 id="retention">6. Data retention</h2>
+  <p>We retain personal information only as long as needed to provide the Service and for the purposes described in this policy. Specifically:</p>
+  <ul>
+    <li>Account data: while your account is active and for up to 90 days after deletion (for backup and recovery).</li>
+    <li>Waitlist email: until you unsubscribe.</li>
+    <li>Server logs: typically up to 90 days.</li>
+    <li>Records we are legally required to keep (e.g., tax or fraud prevention records): for the period required by applicable law.</li>
+  </ul>
+
+  <h2 id="rights">7. Your rights</h2>
+  <p>Depending on where you live, you may have the right to:</p>
+  <ul>
+    <li><strong>Access</strong> the personal information we hold about you.</li>
+    <li><strong>Correct</strong> inaccurate or incomplete information.</li>
+    <li><strong>Delete</strong> your information ("right to be forgotten").</li>
+    <li><strong>Port</strong> your information to another service.</li>
+    <li><strong>Object to</strong> or <strong>restrict</strong> certain processing.</li>
+    <li><strong>Withdraw consent</strong> where we rely on consent to process your information.</li>
+    <li><strong>Lodge a complaint</strong> with a data protection authority.</li>
+  </ul>
+  <p>To exercise any of these rights, email us at <a href="mailto:privacy@cookgarnish.com">privacy@cookgarnish.com</a>. We will respond within the timeframe required by applicable law (typically 30–45 days). We will not discriminate against you for exercising your rights.</p>
+
+  <h2 id="california">8. California residents (CCPA/CPRA)</h2>
+  <p>If you are a California resident, you have the rights described above plus the right to know what categories of personal information we collect and disclose. In the past 12 months, we have collected the categories of information described in <a href="#info">Section 2</a> for the purposes described in <a href="#use">Section 3</a>.</p>
+  <p><strong>We do not sell or share personal information for cross-context behavioral advertising</strong> as those terms are defined under the CPRA. We do not knowingly collect or sell the personal information of minors under 16.</p>
+  <p>You may designate an authorized agent to make a request on your behalf. To submit a request, email <a href="mailto:privacy@cookgarnish.com">privacy@cookgarnish.com</a>. We will verify your identity before fulfilling the request.</p>
+
+  <h2 id="eu">9. EU / UK residents (GDPR)</h2>
+  <p>If you are in the European Economic Area, United Kingdom, or Switzerland, the data controller for your personal information is Garnish. Our legal bases for processing are:</p>
+  <ul>
+    <li><strong>Contract:</strong> to provide the Service you signed up for.</li>
+    <li><strong>Consent:</strong> for marketing emails and non-essential cookies (you can withdraw at any time).</li>
+    <li><strong>Legitimate interests:</strong> to operate, secure, and improve the Service, in a way that doesn't override your rights.</li>
+    <li><strong>Legal obligation:</strong> to comply with applicable law.</li>
+  </ul>
+  <p>You have the right to lodge a complaint with your local data protection authority.</p>
+
+  <h2 id="children">10. Children's privacy</h2>
+  <p>Garnish is not directed to children under 13 (or under 16 in the EU/UK), and we do not knowingly collect personal information from them. If you believe a child has provided us with personal information, please contact <a href="mailto:privacy@cookgarnish.com">privacy@cookgarnish.com</a> and we will delete it.</p>
+
+  <h2 id="transfers">11. International data transfers</h2>
+  <p>Garnish is operated from the United States. If you access the Service from outside the US, your information will be transferred to and processed in the US and other jurisdictions where our service providers operate. Where required, we use appropriate safeguards such as the European Commission's Standard Contractual Clauses to protect your data.</p>
+
+  <h2 id="security">12. Security</h2>
+  <p>We use industry-standard technical and organizational measures to protect personal information, including encryption in transit (TLS), encryption at rest, hashed passwords, access controls, and regular security reviews. No system is 100% secure — if you believe your account has been compromised, contact us immediately.</p>
+
+  <h2 id="changes">13. Changes to this policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we make material changes, we will notify you by email or through the Service and update the "Last updated" date at the top. Continued use after the effective date means you accept the updated policy.</p>
+
+  <h2 id="contact">14. Contact us</h2>
+  <p>Questions, requests, or complaints? We'd love to hear from you.</p>
+  <ul>
+    <li>Email: <a href="mailto:privacy@cookgarnish.com">privacy@cookgarnish.com</a></li>
+    <li>General: <a href="mailto:hello@cookgarnish.com">hello@cookgarnish.com</a></li>
+    <li>Web: <a href="https://cookgarnish.com">cookgarnish.com</a></li>
+  </ul>
+</main>
+
+<footer>
+  <p>© 2026 Garnish. All rights reserved.</p>
+  <p><a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms">Terms</a> &nbsp;·&nbsp; <a href="/">Home</a></p>
+</footer>
+
+</body>
+</html>

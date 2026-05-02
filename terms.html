@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Terms of Service — Garnish</title>
+<meta name="description" content="The terms that govern your use of Garnish."/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://cookgarnish.com/terms"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-deep:#1a3a06;
+  --green-mid:#2d5a0e;
+  --green-bright:#4a8c1c;
+  --green-light:#e8f2d8;
+  --green-pale:#f4f9ed;
+  --cream:#faf7f0;
+  --warm-white:#fffef9;
+  --text-dark:#0f1f05;
+  --text-mid:#3d5c1a;
+  --text-soft:#6b7c5a;
+  --amber:#e8a020;
+  --amber-light:#fdf3e0;
+  --border:rgba(45,90,14,.12);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--text-dark);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:1000;opacity:.6;
+}
+nav{
+  position:sticky;top:0;z-index:100;
+  padding:18px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(250,247,240,.88);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:22px;color:var(--green-deep);
+  text-decoration:none;font-weight:700;letter-spacing:-.5px;
+}
+.nav-logo span{font-style:italic;font-weight:400}
+.nav-back{
+  font-size:14px;color:var(--text-mid);
+  text-decoration:none;font-weight:500;
+}
+.nav-back:hover{color:var(--green-bright)}
+
+main{max-width:760px;margin:0 auto;padding:60px 28px 80px;position:relative;z-index:2}
+
+.eyebrow{
+  display:inline-block;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--green-bright);font-weight:500;
+  margin-bottom:14px;
+}
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(34px,5vw,52px);
+  line-height:1.1;letter-spacing:-1px;
+  color:var(--green-deep);
+  margin-bottom:14px;
+}
+.subtitle{font-size:17px;color:var(--text-soft);margin-bottom:8px}
+.updated{
+  font-size:14px;color:var(--text-soft);
+  margin-bottom:40px;padding-bottom:24px;
+  border-bottom:1px solid var(--border);
+}
+.updated strong{color:var(--text-mid);font-weight:600}
+
+.toc{
+  background:var(--green-pale);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:22px 26px;
+  margin-bottom:48px;
+}
+.toc-title{
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--green-mid);font-weight:600;margin-bottom:12px;
+}
+.toc ol{
+  list-style:none;counter-reset:toc;
+  display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;
+}
+.toc li{counter-increment:toc;font-size:14.5px}
+.toc li::before{content:counter(toc) ". ";color:var(--text-soft)}
+.toc a{color:var(--green-mid);text-decoration:none}
+.toc a:hover{text-decoration:underline}
+
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:26px;color:var(--green-deep);
+  margin:48px 0 14px;letter-spacing:-.3px;
+  scroll-margin-top:80px;
+}
+h3{font-size:16px;font-weight:600;color:var(--green-mid);margin:24px 0 8px}
+p{margin-bottom:14px;color:var(--text-dark);font-size:16px}
+ul{margin:8px 0 16px 22px}
+li{margin-bottom:6px;font-size:16px}
+li::marker{color:var(--green-bright)}
+a{color:var(--green-mid);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--green-bright)}
+strong{color:var(--green-deep)}
+
+.callout{
+  background:var(--warm-white);
+  border-left:3px solid var(--green-bright);
+  border-radius:0 10px 10px 0;
+  padding:16px 20px;margin:18px 0;font-size:15px;
+}
+.callout-warn{
+  background:var(--amber-light);
+  border-left-color:var(--amber);
+}
+.uppercase{
+  font-size:14.5px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  font-weight:500;
+}
+
+footer{
+  border-top:1px solid var(--border);
+  margin-top:80px;padding:40px 28px;
+  text-align:center;background:var(--green-pale);
+  position:relative;z-index:2;
+}
+footer p{font-size:14px;color:var(--text-soft);margin-bottom:6px}
+footer a{color:var(--text-mid);font-weight:500}
+
+@media (max-width:600px){
+  nav{padding:14px 20px}
+  main{padding:40px 22px 60px}
+  .toc ol{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Garnish<span> 🌿</span></a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<main>
+  <span class="eyebrow">Legal</span>
+  <h1>Terms of Service</h1>
+  <p class="subtitle">The agreement between you and Garnish when you use the Service.</p>
+  <p class="updated"><strong>Last updated:</strong> May 2, 2026 &nbsp;·&nbsp; <strong>Effective:</strong> May 2, 2026</p>
+
+  <div class="callout">
+    Please read these Terms carefully. They include important information about your rights, our responsibilities, and how disputes are resolved — including, in <a href="#disputes">Section 14</a>, an arbitration clause and class-action waiver that affects how disputes are handled.
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#acceptance">Acceptance of terms</a></li>
+      <li><a href="#eligibility">Eligibility</a></li>
+      <li><a href="#accounts">Accounts</a></li>
+      <li><a href="#use">Acceptable use</a></li>
+      <li><a href="#content">User content</a></li>
+      <li><a href="#ip">Intellectual property</a></li>
+      <li><a href="#recipes">Recipes &amp; dietary disclaimer</a></li>
+      <li><a href="#third-parties">Third-party services &amp; Amazon Fresh</a></li>
+      <li><a href="#payments">Subscriptions &amp; payments</a></li>
+      <li><a href="#disclaimers">Disclaimers</a></li>
+      <li><a href="#liability">Limitation of liability</a></li>
+      <li><a href="#indemnity">Indemnification</a></li>
+      <li><a href="#termination">Termination</a></li>
+      <li><a href="#disputes">Governing law &amp; disputes</a></li>
+      <li><a href="#changes">Changes to these terms</a></li>
+      <li><a href="#general">General</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </div>
+
+  <h2 id="acceptance">1. Acceptance of terms</h2>
+  <p>These Terms of Service (the "Terms") form a binding agreement between you and Garnish ("Garnish," "we," "us," or "our") and govern your access to and use of the Garnish website at <a href="https://cookgarnish.com">cookgarnish.com</a>, our mobile and web applications, and any related services (collectively, the "Service").</p>
+  <p>By accessing or using the Service, you confirm that you have read, understood, and agree to be bound by these Terms and our <a href="/privacy">Privacy Policy</a>. If you don't agree, please don't use the Service.</p>
+
+  <h2 id="eligibility">2. Eligibility</h2>
+  <p>You must be at least 13 years old (or 16 in the EU/UK) to use the Service. If you are under 18, you must have permission from a parent or legal guardian. By using the Service, you represent that you meet these requirements and that you have the legal capacity to enter into these Terms.</p>
+
+  <h2 id="accounts">3. Accounts</h2>
+  <p>To access certain features, you may need to create an account. You agree to:</p>
+  <ul>
+    <li>Provide accurate, current, and complete information.</li>
+    <li>Keep your password secure and not share your account credentials.</li>
+    <li>Be responsible for all activity that occurs under your account.</li>
+    <li>Notify us promptly at <a href="mailto:support@cookgarnish.com">support@cookgarnish.com</a> if you suspect unauthorized use.</li>
+  </ul>
+  <p>We may suspend or terminate accounts that violate these Terms or that we reasonably believe pose a security risk.</p>
+
+  <h2 id="use">4. Acceptable use</h2>
+  <p>You agree not to:</p>
+  <ul>
+    <li>Use the Service for any unlawful, harmful, fraudulent, or deceptive purpose.</li>
+    <li>Violate any applicable law, regulation, or third-party rights.</li>
+    <li>Upload or share content that is illegal, defamatory, obscene, harassing, or infringes intellectual property rights.</li>
+    <li>Attempt to access another user's account or any non-public part of the Service.</li>
+    <li>Reverse engineer, decompile, or attempt to extract source code, except as permitted by law.</li>
+    <li>Interfere with or disrupt the Service, including by transmitting malware, sending unsolicited messages, or overloading our infrastructure.</li>
+    <li>Scrape, crawl, or harvest data from the Service without our express written permission.</li>
+    <li>Resell, sublicense, or commercially exploit any part of the Service without our written permission.</li>
+    <li>Use the Service to develop a competing product or train an AI/ML model without our written permission.</li>
+  </ul>
+
+  <h2 id="content">5. User content</h2>
+  <p>"User Content" means anything you submit, upload, or share through the Service — including photos, ratings, comments, notes, recipe modifications, and shopping lists.</p>
+  <p><strong>You retain ownership</strong> of your User Content. By submitting it, you grant Garnish a worldwide, non-exclusive, royalty-free, sublicensable, transferable license to host, store, reproduce, modify (e.g., resize images), publicly display, and use your User Content solely to operate, provide, improve, and promote the Service.</p>
+  <p>You represent and warrant that you own or have the necessary rights to your User Content and that it does not violate these Terms or any third-party rights. We may, but are not obligated to, review, remove, or refuse to display User Content that we believe violates these Terms.</p>
+  <p>You may delete your User Content at any time. We may retain backup copies for a reasonable period as described in our <a href="/privacy">Privacy Policy</a>.</p>
+
+  <h2 id="ip">6. Intellectual property</h2>
+  <p>The Service — including all software, designs, text, graphics, logos, icons, and the curated recipe database — is the property of Garnish or our licensors and is protected by copyright, trademark, and other intellectual property laws. We grant you a limited, personal, non-exclusive, non-transferable, revocable license to use the Service for your personal, non-commercial use, subject to these Terms.</p>
+  <p>"Garnish" and the Garnish logo are trademarks of Garnish. You may not use them without our prior written permission. All rights not expressly granted are reserved.</p>
+
+  <h2 id="recipes">7. Recipes, nutrition &amp; dietary disclaimer</h2>
+  <div class="callout callout-warn">
+    <strong>Important:</strong> Recipes, ingredient lists, nutrition facts, and dietary classifications on Garnish are provided for informational purposes only. They are <strong>not medical, nutritional, or dietary advice</strong>. Always consult a qualified professional for guidance specific to your health, allergies, or dietary needs.
+  </div>
+  <p>You are solely responsible for:</p>
+  <ul>
+    <li>Verifying ingredient labels for allergens and dietary restrictions before consumption.</li>
+    <li>Following safe food handling, cooking, and storage practices.</li>
+    <li>Confirming that any recipe is appropriate for you, your family, and any guests with allergies or dietary needs.</li>
+  </ul>
+  <p>Nutrition information is estimated and may vary based on specific ingredients, brands, portion sizes, and preparation methods. Garnish is not liable for any adverse reaction, illness, or injury arising from your reliance on recipe or nutrition information provided through the Service.</p>
+
+  <h2 id="third-parties">8. Third-party services &amp; Amazon Fresh</h2>
+  <p>The Service integrates with third-party services, including Amazon Fresh for grocery delivery. When you use these features, the third party's terms and privacy policies apply to their services, and you transact directly with them. Garnish is not a party to those transactions and is not responsible for:</p>
+  <ul>
+    <li>Product availability, pricing, substitutions, or quality.</li>
+    <li>Delivery, fulfillment, or returns.</li>
+    <li>Charges, refunds, or disputes related to your Amazon order.</li>
+    <li>Changes to third-party APIs that affect availability of integrations.</li>
+  </ul>
+  <p>Amazon, Amazon Fresh, and related logos are trademarks of Amazon.com, Inc. or its affiliates. Garnish is not affiliated with, sponsored by, or endorsed by Amazon.</p>
+
+  <h2 id="payments">9. Subscriptions &amp; payments</h2>
+  <p>Some features of the Service may require a paid subscription ("Premium"). If you purchase Premium:</p>
+  <ul>
+    <li>You authorize us (or our payment processor) to charge the payment method on file at the rate shown at checkout.</li>
+    <li>Subscriptions automatically renew at the end of each billing period unless cancelled before the renewal date.</li>
+    <li>You can cancel anytime through your account settings or app store. Cancellation takes effect at the end of the current billing period.</li>
+    <li>Except as required by law or expressly stated, payments are non-refundable.</li>
+    <li>We may change pricing with reasonable advance notice. Changes take effect at the start of the next billing cycle.</li>
+  </ul>
+  <p>For purchases through Apple App Store or Google Play, the platform's billing and refund policies apply.</p>
+
+  <h2 id="disclaimers">10. Disclaimers</h2>
+  <p class="uppercase">The Service is provided "as is" and "as available" without warranties of any kind, whether express or implied. To the fullest extent permitted by law, Garnish disclaims all warranties, including warranties of merchantability, fitness for a particular purpose, non-infringement, and any warranties arising out of course of dealing or usage of trade.</p>
+  <p>Garnish does not warrant that the Service will be uninterrupted, secure, error-free, or that defects will be corrected; nor that any content (including recipes and nutrition information) is accurate, complete, or current. Any reliance on the Service is at your own risk.</p>
+
+  <h2 id="liability">11. Limitation of liability</h2>
+  <p class="uppercase">To the fullest extent permitted by law, in no event will Garnish, its affiliates, officers, directors, employees, or agents be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages — including loss of profits, data, goodwill, or other intangible losses — arising out of or relating to your use of, or inability to use, the Service, even if Garnish has been advised of the possibility of such damages.</p>
+  <p class="uppercase">In no event will Garnish's total aggregate liability arising out of or relating to these Terms or the Service exceed the greater of (a) the amount you paid Garnish in the twelve (12) months preceding the event giving rise to the claim, or (b) one hundred US dollars ($100).</p>
+  <p>Some jurisdictions do not allow the exclusion or limitation of certain damages, so some of the above limitations may not apply to you.</p>
+
+  <h2 id="indemnity">12. Indemnification</h2>
+  <p>You agree to indemnify, defend, and hold harmless Garnish and its affiliates, officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising out of or in any way connected with:</p>
+  <ul>
+    <li>Your access to or use of the Service.</li>
+    <li>Your User Content.</li>
+    <li>Your violation of these Terms or any law or third-party right.</li>
+  </ul>
+
+  <h2 id="termination">13. Termination</h2>
+  <p>You may stop using the Service at any time and delete your account through account settings or by emailing <a href="mailto:support@cookgarnish.com">support@cookgarnish.com</a>.</p>
+  <p>We may suspend or terminate your access to the Service at any time, with or without cause or notice, including if we reasonably believe you have violated these Terms. Upon termination, your right to use the Service ends immediately. Sections that by their nature should survive termination (including <a href="#content">5</a>, <a href="#ip">6</a>, <a href="#disclaimers">10</a>, <a href="#liability">11</a>, <a href="#indemnity">12</a>, and <a href="#disputes">14</a>) will survive.</p>
+
+  <h2 id="disputes">14. Governing law &amp; dispute resolution</h2>
+  <p>These Terms are governed by the laws of the State of [STATE], United States, without regard to conflict-of-laws principles.</p>
+
+  <h3>Informal resolution</h3>
+  <p>Before filing a claim, you agree to try to resolve the dispute informally by emailing us at <a href="mailto:legal@cookgarnish.com">legal@cookgarnish.com</a>. We will try to resolve the dispute within 60 days.</p>
+
+  <h3>Binding arbitration</h3>
+  <p>If we can't resolve the dispute informally, you and Garnish agree to resolve any claim arising out of or relating to these Terms or the Service through final and binding individual arbitration administered by a recognized arbitration provider, conducted under their then-current rules. The arbitration will be held in [COUNTY, STATE] or another mutually agreed location, or by video conference.</p>
+
+  <h3>Class action waiver</h3>
+  <p class="uppercase">You and Garnish each waive the right to bring or participate in any class, collective, or representative action. The arbitrator may not consolidate more than one person's claims and may not preside over any form of representative or class proceeding.</p>
+
+  <h3>Exceptions</h3>
+  <p>Either party may bring an individual action in small-claims court, or seek injunctive relief in court for infringement or misuse of intellectual property rights.</p>
+
+  <h3>Opt-out</h3>
+  <p>You may opt out of the arbitration agreement and class-action waiver by emailing <a href="mailto:legal@cookgarnish.com">legal@cookgarnish.com</a> within 30 days of first accepting these Terms with the subject "Arbitration Opt-Out" and including your name and email address.</p>
+
+  <h2 id="changes">15. Changes to these terms</h2>
+  <p>We may modify these Terms from time to time. If we make material changes, we will notify you by email or through the Service and update the "Last updated" date. Continued use of the Service after the effective date constitutes acceptance of the updated Terms. If you don't agree to the changes, please stop using the Service.</p>
+
+  <h2 id="general">16. General</h2>
+  <ul>
+    <li><strong>Entire agreement:</strong> These Terms and our <a href="/privacy">Privacy Policy</a> are the entire agreement between you and Garnish regarding the Service.</li>
+    <li><strong>Severability:</strong> If any provision is found unenforceable, the remaining provisions will remain in full force and effect.</li>
+    <li><strong>No waiver:</strong> Our failure to enforce any right or provision is not a waiver of that right.</li>
+    <li><strong>Assignment:</strong> You may not assign these Terms without our written consent. We may assign these Terms in connection with a merger, acquisition, or sale of assets.</li>
+    <li><strong>Force majeure:</strong> We are not liable for any failure or delay caused by circumstances beyond our reasonable control.</li>
+    <li><strong>Headings:</strong> Section headings are for reference only and do not affect interpretation.</li>
+  </ul>
+
+  <h2 id="contact">17. Contact</h2>
+  <p>Questions about these Terms? Reach us at:</p>
+  <ul>
+    <li>Legal: <a href="mailto:legal@cookgarnish.com">legal@cookgarnish.com</a></li>
+    <li>Support: <a href="mailto:support@cookgarnish.com">support@cookgarnish.com</a></li>
+    <li>Web: <a href="https://cookgarnish.com">cookgarnish.com</a></li>
+  </ul>
+</main>
+
+<footer>
+  <p>© 2026 Garnish. All rights reserved.</p>
+  <p><a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms">Terms</a> &nbsp;·&nbsp; <a href="/">Home</a></p>
+</footer>
+
+</body>
+</html>
