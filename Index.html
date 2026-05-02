@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Garnish — Healthy Recipes + Amazon Fresh Delivery | Coming Soon</title>
+<meta name="description" content="632 healthy recipes with one-tap Amazon Fresh grocery delivery. Join the waitlist and be first to know when Garnish launches."/>
+
+<!-- Canonical URL — tells Google this is the official source -->
+<link rel="canonical" href="https://cookgarnish.com/"/>
+
+<!-- Open Graph (Facebook, WhatsApp, LinkedIn share previews) -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://cookgarnish.com/"/>
+<meta property="og:site_name" content="Garnish"/>
+<meta property="og:title" content="Garnish — Healthy Recipes Are About to Get a Lot Easier"/>
+<meta property="og:description" content="Step-by-step cooking mode, built-in timers, and one-tap Amazon Fresh delivery. Join the waitlist for early access."/>
+<meta property="og:image" content="https://cookgarnish.com/og-image.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Garnish app — 632 healthy recipes with Amazon Fresh delivery"/>
+
+<!-- Twitter / X share preview -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Garnish — Healthy Recipes + Amazon Fresh Delivery"/>
+<meta name="twitter:description" content="Join the waitlist. 632 recipes, one-tap grocery delivery. Coming soon."/>
+<meta name="twitter:image" content="https://cookgarnish.com/og-image.jpg"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --green-deep:#1a3a06;
+  --green-mid:#2d5a0e;
+  --green-bright:#4a8c1c;
+  --green-light:#e8f2d8;
+  --green-pale:#f4f9ed;
+  --cream:#faf7f0;
+  --warm-white:#fffef9;
+  --text-dark:#0f1f05;
+  --text-mid:#3d5c1a;
+  --text-soft:#6b7c5a;
+  --amber:#e8a020;
+  --amber-light:#fdf3e0;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--text-dark);
+  overflow-x:hidden;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:1000;
+  opacity:.6;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:100;
+  padding:18px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(250,247,240,.88);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(45,90,14,.1);
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  color:var(--green-deep);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+}
+.nav-badge{
+  font-family:'DM Sans',sans-serif;
+  font-size:11px;
+  font-weight:500;
+  padding:3px 10px;
+  border-radius:20px;
+  background:var(--green-light);
+  color:var(--green-mid);
+  letter-spacing:.04em;
+}
+.nav-cta{
+  padding:9px 22px;
+  border-radius:24px;
+  background:var(--green-deep);
+  color:white;
+  font-size:13px;
+  font-weight:500;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  transition:background .2s,transform .15s;
+}
+.nav-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:0;
+  padding-top:80px;
+}
+
+.hero-left{
+  padding:80px 60px 80px 80px;
+  position:relative;
+}
+
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--green-bright);
+  margin-bottom:28px;
+  padding:6px 14px;
+  border-radius:20px;
+  border:1px solid var(--green-light);
+  background:var(--green-pale);
+  opacity:0;
+  animation:fadeUp .6s .1s forwards;
+}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--green-bright);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(38px,4.5vw,62px);
+  line-height:1.1;
+  color:var(--green-deep);
+  margin-bottom:24px;
+  opacity:0;
+  animation:fadeUp .7s .2s forwards;
+}
+h1 em{
+  font-style:italic;
+  color:var(--green-bright);
+}
+
+.hero-sub{
+  font-size:17px;
+  line-height:1.65;
+  color:var(--text-soft);
+  margin-bottom:40px;
+  max-width:460px;
+  font-weight:300;
+  opacity:0;
+  animation:fadeUp .7s .35s forwards;
+}
+
+/* ── WAITLIST FORM ── */
+.form-wrap{
+  opacity:0;
+  animation:fadeUp .7s .45s forwards;
+}
+.form-label{
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--text-mid);
+  margin-bottom:10px;
+  display:block;
+}
+.form-row{
+  display:flex;
+  gap:10px;
+  max-width:460px;
+  margin-bottom:12px;
+}
+.form-input{
+  flex:1;
+  padding:14px 18px;
+  border-radius:14px;
+  border:1.5px solid rgba(45,90,14,.2);
+  background:var(--warm-white);
+  font-size:15px;
+  font-family:'DM Sans',sans-serif;
+  color:var(--text-dark);
+  outline:none;
+  transition:border-color .2s,box-shadow .2s;
+}
+.form-input:focus{
+  border-color:var(--green-bright);
+  box-shadow:0 0 0 3px rgba(74,140,28,.12);
+}
+.form-input::placeholder{color:#aab59a}
+.form-btn{
+  padding:14px 28px;
+  border-radius:14px;
+  background:var(--green-deep);
+  color:white;
+  font-size:15px;
+  font-weight:500;
+  font-family:'DM Sans',sans-serif;
+  border:none;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:background .2s,transform .15s,box-shadow .2s;
+  box-shadow:0 4px 16px rgba(26,58,6,.25);
+}
+.form-btn:hover{background:var(--green-mid);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,58,6,.3)}
+.form-btn:active{transform:translateY(0)}
+.form-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.form-note{
+  font-size:12px;
+  color:var(--text-soft);
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.form-success{
+  display:none;
+  padding:16px 20px;
+  border-radius:14px;
+  background:var(--green-pale);
+  border:1.5px solid var(--green-light);
+  color:var(--green-deep);
+  font-size:15px;
+  font-weight:500;
+  max-width:460px;
+}
+.form-success.show{display:flex;align-items:center;gap:10px}
+.form-error{
+  font-size:13px;
+  color:#c0392b;
+  margin-top:8px;
+  display:none;
+}
+.form-error.show{display:block}
+
+/* ── HERO RIGHT — Phone mockup ── */
+.hero-right{
+  background:linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 60%, var(--green-bright) 100%);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  padding:100px 40px 60px;
+}
+
+/* Decorative circles */
+.hero-right::before{
+  content:'';
+  position:absolute;
+  width:500px;height:500px;
+  border-radius:50%;
+  background:rgba(255,255,255,.04);
+  top:-100px;right:-100px;
+}
+.hero-right::after{
+  content:'';
+  position:absolute;
+  width:300px;height:300px;
+  border-radius:50%;
+  background:rgba(255,255,255,.06);
+  bottom:-60px;left:-60px;
+}
+
+.phone-mockup{
+  position:relative;
+  z-index:2;
+  width:260px;
+  opacity:0;
+  animation:phoneIn .9s .5s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+@keyframes phoneIn{
+  from{opacity:0;transform:translateY(40px) scale(.9)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+.phone-frame{
+  background:#0a1a02;
+  border-radius:40px;
+  padding:12px;
+  box-shadow:
+    0 40px 80px rgba(0,0,0,.5),
+    0 0 0 1px rgba(255,255,255,.1),
+    inset 0 0 0 1px rgba(0,0,0,.3);
+}
+.phone-screen{
+  border-radius:30px;
+  overflow:hidden;
+  background:#fff;
+  aspect-ratio:9/19.5;
+  position:relative;
+}
+.phone-notch{
+  position:absolute;
+  top:10px;left:50%;
+  transform:translateX(-50%);
+  width:90px;height:26px;
+  background:#0a1a02;
+  border-radius:20px;
+  z-index:10;
+}
+.phone-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top;
+}
+
+/* Floating feature pills around phone */
+.float-pill{
+  position:absolute;
+  z-index:3;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(8px);
+  border-radius:16px;
+  padding:10px 14px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
+  font-size:13px;
+  font-weight:500;
+  color:var(--text-dark);
+  white-space:nowrap;
+}
+.pill-icon{font-size:18px}
+.pill-1{top:18%;left:-70px;animation:float1 4s ease-in-out infinite}
+.pill-2{top:42%;right:-60px;animation:float2 4.5s ease-in-out infinite}
+.pill-3{bottom:22%;left:-60px;animation:float1 5s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* ── SOCIAL PROOF BAR ── */
+.proof-bar{
+  background:var(--green-deep);
+  padding:20px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:60px;
+  flex-wrap:wrap;
+}
+.proof-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:rgba(255,255,255,.85);
+  font-size:14px;
+}
+.proof-icon{font-size:20px}
+.proof-num{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  color:white;
+  font-weight:700;
+}
+
+/* ── FEATURES SECTION ── */
+.features{
+  padding:100px 80px;
+  background:var(--warm-white);
+}
+.section-eyebrow{
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--green-bright);
+  margin-bottom:16px;
+  text-align:center;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,3.5vw,44px);
+  color:var(--green-deep);
+  text-align:center;
+  margin-bottom:16px;
+  line-height:1.2;
+}
+.section-sub{
+  text-align:center;
+  color:var(--text-soft);
+  font-size:16px;
+  font-weight:300;
+  margin-bottom:64px;
+  max-width:560px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  max-width:1100px;
+  margin:0 auto;
+}
+.feature-card{
+  padding:32px;
+  border-radius:20px;
+  background:var(--green-pale);
+  border:1px solid var(--green-light);
+  transition:transform .2s,box-shadow .2s;
+  position:relative;
+  overflow:hidden;
+}
+.feature-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--green-bright),var(--green-mid));
+  opacity:0;
+  transition:opacity .2s;
+}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(26,58,6,.12)}
+.feature-card:hover::before{opacity:1}
+.feature-emoji{font-size:36px;margin-bottom:16px;display:block}
+.feature-name{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  color:var(--green-deep);
+  margin-bottom:10px;
+}
+.feature-desc{
+  font-size:14px;
+  line-height:1.65;
+  color:var(--text-soft);
+  font-weight:300;
+}
+
+/* ── HOW IT WORKS ── */
+.how{
+  padding:100px 80px;
+  background:var(--cream);
+  position:relative;
+}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  max-width:900px;
+  margin:0 auto;
+  position:relative;
+}
+/* Connecting line */
+.steps::before{
+  content:'';
+  position:absolute;
+  top:28px;left:calc(16.67% + 28px);right:calc(16.67% + 28px);
+  height:2px;
+  background:linear-gradient(90deg,var(--green-light),var(--green-bright),var(--green-light));
+}
+.step{text-align:center}
+.step-num{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:var(--green-deep);
+  color:white;
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;
+  position:relative;
+  z-index:1;
+  box-shadow:0 4px 16px rgba(26,58,6,.3);
+}
+.step-title{
+  font-family:'Playfair Display',serif;
+  font-size:18px;
+  color:var(--green-deep);
+  margin-bottom:8px;
+}
+.step-desc{
+  font-size:14px;
+  color:var(--text-soft);
+  line-height:1.6;
+  font-weight:300;
+}
+
+/* ── BOTTOM CTA ── */
+.bottom-cta{
+  padding:100px 40px;
+  background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-mid) 100%);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.bottom-cta::before{
+  content:'🌿';
+  font-size:300px;
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  opacity:.04;
+  pointer-events:none;
+}
+.bottom-cta h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,4vw,52px);
+  color:white;
+  margin-bottom:16px;
+  position:relative;
+}
+.bottom-cta p{
+  color:rgba(255,255,255,.7);
+  font-size:17px;
+  margin-bottom:40px;
+  font-weight:300;
+  position:relative;
+}
+.bottom-form{
+  display:flex;
+  gap:10px;
+  max-width:440px;
+  margin:0 auto;
+  position:relative;
+}
+.bottom-input{
+  flex:1;
+  padding:15px 20px;
+  border-radius:14px;
+  border:1.5px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(8px);
+  color:white;
+  font-size:15px;
+  font-family:'DM Sans',sans-serif;
+  outline:none;
+  transition:border-color .2s;
+}
+.bottom-input::placeholder{color:rgba(255,255,255,.5)}
+.bottom-input:focus{border-color:rgba(255,255,255,.5)}
+.bottom-btn{
+  padding:15px 28px;
+  border-radius:14px;
+  background:white;
+  color:var(--green-deep);
+  font-size:15px;
+  font-weight:500;
+  font-family:'DM Sans',sans-serif;
+  border:none;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:transform .15s,box-shadow .2s;
+  box-shadow:0 4px 16px rgba(0,0,0,.2);
+}
+.bottom-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.bottom-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.bottom-success{
+  display:none;
+  color:white;
+  font-size:17px;
+  font-weight:500;
+  padding:16px;
+  position:relative;
+}
+.bottom-success.show{display:block}
+
+/* ── FOOTER ── */
+footer{
+  padding:30px 40px;
+  text-align:center;
+  background:var(--green-deep);
+  border-top:1px solid rgba(255,255,255,.08);
+  color:rgba(255,255,255,.4);
+  font-size:13px;
+}
+footer a{color:rgba(255,255,255,.5);text-decoration:none}
+footer a:hover{color:rgba(255,255,255,.8)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:100px 24px 60px}
+  .hero-right{min-height:500px;padding:60px 24px}
+  .phone-mockup{width:200px}
+  .pill-1,.pill-2,.pill-3{display:none}
+  .features{padding:60px 24px}
+  .feature-grid{grid-template-columns:1fr;gap:16px}
+  .how{padding:60px 24px}
+  .steps{grid-template-columns:1fr;gap:32px}
+  .steps::before{display:none}
+  .proof-bar{gap:30px}
+  .bottom-form{flex-direction:column}
+  .bottom-cta{padding:60px 24px}
+  nav{padding:16px 20px}
+}
+
+/* ── Mini app UI inside phone — matches real Garnish app design ── */
+.app-ui{width:100%;height:100%;background:#fff;display:flex;flex-direction:column;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:8px}
+.app-nav{padding:30px 12px 8px;display:flex;align-items:center;justify-content:space-between;border-bottom:0.5px solid rgba(0,0,0,.08);background:#fff;flex-shrink:0}
+.app-nav-logo{font-size:11px;font-weight:500;color:#2d5a0e;display:flex;align-items:center;gap:3px}
+.app-nav-pill{font-size:7.5px;padding:3px 9px;border-radius:12px;background:#e8f2d8;color:#2d5a0e;font-weight:500;border:0.5px solid #b8d88a}
+.app-hero{background:#e8f2d8;border-bottom:0.5px solid #b8d88a;padding:14px 12px 12px;text-align:center;flex-shrink:0}
+.app-hero-text{font-size:11px;font-weight:500;color:#1a3a06;margin-bottom:2px;line-height:1.25}
+.app-hero-sub{font-size:7px;color:#2d5a0e;line-height:1.4}
+.app-roulette-btn{margin:8px 12px 4px;padding:6px 10px;border-radius:8px;background:#e8f2d8;border:0.5px solid #b8d88a;color:#2d5a0e;font-size:7px;font-weight:500;text-align:center;flex-shrink:0}
+.app-cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px 8px 8px;flex:1;overflow:hidden}
+.app-cat-card{background:#fff;border:0.5px solid rgba(0,0,0,.1);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.app-cat-photo{width:100%;height:36px;background-size:cover;background-position:center}
+.app-cat-footer{padding:4px 5px 5px}
+.app-cat-name{font-size:7px;font-weight:500;color:#111;line-height:1.1;margin-bottom:1px}
+.app-cat-meta{font-size:6px;color:#666;line-height:1.2}
+.app-fresh-bar{background:#1a3a06;color:rgba(255,255,255,.9);font-size:6.5px;text-align:center;padding:5px 4px;flex-shrink:0}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">🌿 Garnish</a>
+  <div style="display:flex;align-items:center;gap:12px">
+    <span class="nav-badge">Coming Soon</span>
+    <a class="nav-cta" href="#waitlist">Join Waitlist</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dot"></span>
+      Launching on iOS &amp; Android
+    </div>
+    <h1>Healthy cooking,<br/><em>finally</em> made easy.</h1>
+    <p class="hero-sub">
+      632 recipes. Step-by-step cooking mode with built-in timers. 
+      Spin a wheel to find tonight's dinner. Order every ingredient 
+      through Amazon Fresh with one tap. Free, forever.
+    </p>
+
+    <div class="form-wrap" id="waitlist">
+      <label class="form-label">Get early access — be first to know when we launch</label>
+      <div class="form-row">
+        <input class="form-input" id="heroEmail" type="email" placeholder="your@email.com" autocomplete="email"/>
+        <button class="form-btn" id="heroBtn" onclick="submitWaitlist('heroEmail','heroBtn','heroSuccess','heroError')">
+          Notify me →
+        </button>
+      </div>
+      <div class="form-error" id="heroError"></div>
+      <div class="form-success" id="heroSuccess">
+        <span>🎉</span> You're on the list! We'll email you the moment Garnish launches.
+      </div>
+      <p class="form-note">🔒 No spam, ever. Unsubscribe any time.</p>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="phone-mockup">
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <!-- Mini Garnish app UI rendered to match the real app -->
+          <div class="app-ui">
+
+            <!-- App nav bar -->
+            <div class="app-nav">
+              <span class="app-nav-logo">🌿 Garnish</span>
+              <span class="app-nav-pill">Sign in</span>
+            </div>
+
+            <!-- Hero banner -->
+            <div class="app-hero">
+              <div class="app-hero-text">What are you in the mood for?</div>
+              <div class="app-hero-sub">632 healthy recipes</div>
+            </div>
+
+            <!-- Recipe Roulette button -->
+            <div class="app-roulette-btn">🎰 Recipe Roulette — spin for dinner</div>
+
+            <!-- Category grid — photo on top, white footer below (matches real app) -->
+            <div class="app-cat-grid">
+              <div class="app-cat-card">
+                <div class="app-cat-photo" style="background-image:url('https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=200&q=70')"></div>
+                <div class="app-cat-footer">
+                  <div class="app-cat-name">High Protein</div>
+                  <div class="app-cat-meta">132 recipes</div>
+                </div>
+              </div>
+              <div class="app-cat-card">
+                <div class="app-cat-photo" style="background-image:url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&q=70')"></div>
+                <div class="app-cat-footer">
+                  <div class="app-cat-name">Low Carb</div>
+                  <div class="app-cat-meta">118 recipes</div>
+                </div>
+              </div>
+              <div class="app-cat-card">
+                <div class="app-cat-photo" style="background-image:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=200&q=70')"></div>
+                <div class="app-cat-footer">
+                  <div class="app-cat-name">Vegan</div>
+                  <div class="app-cat-meta">104 recipes</div>
+                </div>
+              </div>
+              <div class="app-cat-card">
+                <div class="app-cat-photo" style="background-image:url('https://images.unsplash.com/photo-1590412200988-a436970781fa?w=200&q=70')"></div>
+                <div class="app-cat-footer">
+                  <div class="app-cat-name">Vegetarian</div>
+                  <div class="app-cat-meta">99 recipes</div>
+                </div>
+              </div>
+              <div class="app-cat-card">
+                <div class="app-cat-photo" style="background-image:url('https://images.unsplash.com/photo-1571748982800-fa51082c2224?w=200&q=70')"></div>
+                <div class="app-cat-footer">
+                  <div class="app-cat-name">Quick</div>
+                  <div class="app-cat-meta">98 recipes</div>
+                </div>
+              </div>
+              <div class="app-cat-card">
+                <div class="app-cat-photo" style="background-image:url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=200&q=70')"></div>
+                <div class="app-cat-footer">
+                  <div class="app-cat-name">Meal Prep</div>
+                  <div class="app-cat-meta">81 recipes</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Amazon Fresh banner at bottom -->
+            <div class="app-fresh-bar">🛒 Get all ingredients delivered with Amazon Fresh</div>
+
+          </div><!-- end app-ui -->
+        </div>
+      </div>
+    </div>
+    <!-- Floating pills -->
+    <div class="float-pill pill-1">
+      <span class="pill-icon">🎰</span>
+      <span>Recipe Roulette</span>
+    </div>
+    <div class="float-pill pill-2">
+      <span class="pill-icon">🛒</span>
+      <span>Amazon Fresh delivery</span>
+    </div>
+    <div class="float-pill pill-3">
+      <span class="pill-icon">👨‍🍳</span>
+      <span>Chef View mode</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-item">
+    <span class="proof-icon">📖</span>
+    <div>
+      <div class="proof-num">632</div>
+      <div>Healthy recipes</div>
+    </div>
+  </div>
+  <div class="proof-item">
+    <span class="proof-icon">⚡</span>
+    <div>
+      <div class="proof-num">98</div>
+      <div>Under 20 minutes</div>
+    </div>
+  </div>
+  <div class="proof-item">
+    <span class="proof-icon">🌱</span>
+    <div>
+      <div class="proof-num">100%</div>
+      <div>Free, no paywall</div>
+    </div>
+  </div>
+  <div class="proof-item">
+    <span class="proof-icon">📦</span>
+    <div>
+      <div class="proof-num">1-tap</div>
+      <div>Amazon Fresh delivery</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features">
+  <p class="section-eyebrow">Why Garnish</p>
+  <h2 class="section-title">Everything you wish your recipe app did</h2>
+  <p class="section-sub">We built Garnish around the features people actually want — not just a list of recipes.</p>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <span class="feature-emoji">🎰</span>
+      <div class="feature-name">Recipe Roulette</div>
+      <p class="feature-desc">Can't decide what to cook? Spin the slot machine and let fate pick your dinner. Filter by category, time, and calories.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-emoji">🛒</span>
+      <div class="feature-name">Amazon Fresh Delivery</div>
+      <p class="feature-desc">Every recipe has a one-tap "Get all ingredients delivered" button. Opens Amazon Fresh with every item ready to add to your cart.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-emoji">👨‍🍳</span>
+      <div class="feature-name">Chef View</div>
+      <p class="feature-desc">One step at a time in large text. Screen stays on automatically so it never dims while your hands are full of flour.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-emoji">⚖️</span>
+      <div class="feature-name">Ingredient Scaler</div>
+      <p class="feature-desc">Cooking for 1 or feeding 12? Tap + or − and every ingredient quantity rescales automatically, including fractions.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-emoji">🔍</span>
+      <div class="feature-name">Ingredient Filter</div>
+      <p class="feature-desc">Search by what you have. Exclude what you hate. Type "no mushrooms" and every recipe with mushrooms disappears.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-emoji">💡</span>
+      <div class="feature-name">Community Tips</div>
+      <p class="feature-desc">Upvote-sorted cooking tweaks from real users. "Halve the sugar" or "add a pinch of smoked paprika" — always shown most helpful first.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <p class="section-eyebrow">How it works</p>
+  <h2 class="section-title">From craving to clean plate</h2>
+  <p class="section-sub">Three steps is all it takes.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-title">Pick a recipe</div>
+      <p class="step-desc">Browse 632 healthy recipes by category, or spin the Recipe Roulette to let fate decide. Filter out ingredients you don't like.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-title">Order ingredients</div>
+      <p class="step-desc">One tap opens Amazon Fresh with every ingredient ready. Schedule Whole Foods delivery for the same day or next morning.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-title">Cook with confidence</div>
+      <p class="step-desc">Follow the step-by-step cooking mode. Built-in timers, large text, screen stays on. Your phone works as hard as you do.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <h2>Be first in line.</h2>
+  <p>Join the waitlist and get early access the moment Garnish launches on iOS and Android.</p>
+  <div class="bottom-form">
+    <input class="bottom-input" id="bottomEmail" type="email" placeholder="your@email.com" autocomplete="email"/>
+    <button class="bottom-btn" id="bottomBtn" onclick="submitWaitlist('bottomEmail','bottomBtn','bottomSuccess','bottomError')">
+      Join waitlist
+    </button>
+  </div>
+  <div class="form-error" id="bottomError" style="color:rgba(255,200,200,.9);margin-top:8px;display:none"></div>
+  <div class="bottom-success" id="bottomSuccess">
+    🎉 You're on the list! We'll email you the moment we launch.
+  </div>
+  <p style="color:rgba(255,255,255,.4);font-size:12px;margin-top:16px;position:relative">No spam, ever. Unsubscribe any time.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>🌿 Garnish &nbsp;·&nbsp; <a href="https://cookgarnish.com">cookgarnish.com</a> &nbsp;·&nbsp; Coming soon to iOS &amp; Android &nbsp;·&nbsp; Questions? <a href="mailto:hello@cookgarnish.com">hello@cookgarnish.com</a></p>
+</footer>
+
+<script>
+// ══════════════════════════════════════════════════════
+// KIT WAITLIST FORM
+// Uses Kit's official subscription endpoint (no API key needed)
+// Form ID: 9394607  ·  Form UID: d7d3f71953
+// ══════════════════════════════════════════════════════
+
+const KIT_FORM_ACTION = 'https://app.kit.com/forms/9394607/subscriptions';
+
+async function submitWaitlist(emailId, btnId, successId, errorId) {
+  const emailEl   = document.getElementById(emailId);
+  const btn       = document.getElementById(btnId);
+  const successEl = document.getElementById(successId);
+  const errorEl   = document.getElementById(errorId);
+  const email     = emailEl.value.trim();
+
+  // Basic email validation
+  if (!email || !email.includes('@') || !email.includes('.')) {
+    errorEl.textContent = 'Please enter a valid email address.';
+    errorEl.classList.add('show');
+    return;
+  }
+
+  errorEl.classList.remove('show');
+  btn.disabled = true;
+  btn.textContent = 'Joining…';
+
+  try {
+    // Kit accepts standard form-urlencoded POST to the form action URL
+    const formData = new FormData();
+    formData.append('email_address', email);
+
+    const res = await fetch(KIT_FORM_ACTION, {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors',  // Kit's endpoint doesn't return CORS headers, but the submission still works
+    });
+
+    // With mode:'no-cors' we can't read the response, but if no error was thrown,
+    // the request was sent successfully. Show success state.
+    emailEl.style.display = 'none';
+    btn.style.display = 'none';
+    successEl.classList.add('show');
+
+    // Track conversion if Google Analytics or Meta Pixel is present
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'waitlist_signup', { method: emailId === 'heroEmail' ? 'hero' : 'bottom' });
+    }
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead', { source: emailId === 'heroEmail' ? 'hero' : 'bottom' });
+    }
+
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = emailId === 'heroEmail' ? 'Notify me →' : 'Join waitlist';
+    errorEl.textContent = 'Something went wrong. Please try again.';
+    errorEl.classList.add('show');
+  }
+}
+
+// Allow Enter key on email inputs
+document.getElementById('heroEmail').addEventListener('keydown', e => {
+  if (e.key === 'Enter') submitWaitlist('heroEmail','heroBtn','heroSuccess','heroError');
+});
+document.getElementById('bottomEmail').addEventListener('keydown', e => {
+  if (e.key === 'Enter') submitWaitlist('bottomEmail','bottomBtn','bottomSuccess','bottomError');
+});
+</script>
+</body>
+</html>
