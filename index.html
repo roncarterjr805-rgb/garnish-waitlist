@@ -31,6 +31,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -651,7 +652,7 @@ footer a:hover{color:rgba(255,255,255,.8)}
 <section class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">
-      <span class="eyebrow-dot"></span>
+      <span class="eyebrow-dot" aria-hidden="true"></span>
       Launching on iOS &amp; Android
     </div>
     <h1>Healthy cooking,<br/><em>finally</em> made easy.</h1>
@@ -662,7 +663,7 @@ footer a:hover{color:rgba(255,255,255,.8)}
     </p>
 
     <div class="form-wrap" id="waitlist">
-      <label class="form-label">Get early access — be first to know when we launch</label>
+      <label class="form-label" for="heroEmail">Get early access — be first to know when we launch</label>
       <div class="form-row">
         <input class="form-input" id="heroEmail" type="email" placeholder="your@email.com" autocomplete="email"/>
         <button class="form-btn" id="heroBtn" onclick="submitWaitlist('heroEmail','heroBtn','heroSuccess','heroError')">
@@ -673,11 +674,11 @@ footer a:hover{color:rgba(255,255,255,.8)}
       <div class="form-success" id="heroSuccess">
         <span>🎉</span> You're on the list! We'll email you the moment Garnish launches.
       </div>
-      <p class="form-note">🔒 No spam, ever. Unsubscribe any time.</p>
+      <p class="form-note">🔒 No spam, ever. Unsubscribe any time. See our <a href="/privacy" style="color:var(--green-mid);text-decoration:underline">Privacy Policy</a>.</p>
     </div>
   </div>
 
-  <div class="hero-right">
+  <div class="hero-right" aria-hidden="true">
     <div class="phone-mockup">
       <div class="phone-frame">
         <div class="phone-screen">
@@ -886,6 +887,7 @@ footer a:hover{color:rgba(255,255,255,.8)}
 <!-- FOOTER -->
 <footer>
   <p>🌿 Garnish &nbsp;·&nbsp; <a href="https://cookgarnish.com">cookgarnish.com</a> &nbsp;·&nbsp; Coming soon to iOS &amp; Android &nbsp;·&nbsp; Questions? <a href="mailto:hello@cookgarnish.com">hello@cookgarnish.com</a></p>
+  <p style="margin-top:10px"><a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms">Terms</a></p>
 </footer>
 
 <script>
@@ -896,6 +898,7 @@ footer a:hover{color:rgba(255,255,255,.8)}
 // ══════════════════════════════════════════════════════
 
 const KIT_FORM_ACTION = 'https://app.kit.com/forms/9394607/subscriptions';
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 async function submitWaitlist(emailId, btnId, successId, errorId) {
   const emailEl   = document.getElementById(emailId);
@@ -903,36 +906,35 @@ async function submitWaitlist(emailId, btnId, successId, errorId) {
   const successEl = document.getElementById(successId);
   const errorEl   = document.getElementById(errorId);
   const email     = emailEl.value.trim();
+  const originalBtnText = btn.dataset.originalText || btn.textContent;
+  btn.dataset.originalText = originalBtnText;
 
-  // Basic email validation
-  if (!email || !email.includes('@') || !email.includes('.')) {
+  if (!EMAIL_RE.test(email)) {
     errorEl.textContent = 'Please enter a valid email address.';
     errorEl.classList.add('show');
+    errorEl.style.display = 'block';
     return;
   }
 
   errorEl.classList.remove('show');
+  errorEl.style.display = 'none';
   btn.disabled = true;
   btn.textContent = 'Joining…';
 
   try {
-    // Kit accepts standard form-urlencoded POST to the form action URL
     const formData = new FormData();
     formData.append('email_address', email);
 
-    const res = await fetch(KIT_FORM_ACTION, {
+    await fetch(KIT_FORM_ACTION, {
       method: 'POST',
       body: formData,
-      mode: 'no-cors',  // Kit's endpoint doesn't return CORS headers, but the submission still works
+      mode: 'no-cors',
     });
 
-    // With mode:'no-cors' we can't read the response, but if no error was thrown,
-    // the request was sent successfully. Show success state.
     emailEl.style.display = 'none';
     btn.style.display = 'none';
     successEl.classList.add('show');
 
-    // Track conversion if Google Analytics or Meta Pixel is present
     if (typeof gtag !== 'undefined') {
       gtag('event', 'waitlist_signup', { method: emailId === 'heroEmail' ? 'hero' : 'bottom' });
     }
@@ -942,9 +944,10 @@ async function submitWaitlist(emailId, btnId, successId, errorId) {
 
   } catch (err) {
     btn.disabled = false;
-    btn.textContent = emailId === 'heroEmail' ? 'Notify me →' : 'Join waitlist';
+    btn.textContent = originalBtnText;
     errorEl.textContent = 'Something went wrong. Please try again.';
     errorEl.classList.add('show');
+    errorEl.style.display = 'block';
   }
 }
 
